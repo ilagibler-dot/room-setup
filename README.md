@@ -4,23 +4,25 @@
 
 Не связано с Треком (event-crm). Данные хранятся локально в браузере (localStorage).
 
+Репозиторий: https://github.com/ilagibler-dot/room-setup
+
 ## Запуск локально
 
 ```bash
-cd room-setup
+cd room-setup   # или cd ~/Projects/room-setup
 npm install
 npm run dev
 ```
 
 Откройте [http://localhost:3001](http://localhost:3001)
 
-## Деплой на отдельный сайт
+## Деплой
 
 ### Vercel
 
-1. Создайте новый проект в Vercel
-2. Укажите **Root Directory**: `room-setup`
-3. Framework: Next.js
+1. Создайте **новый** проект в Vercel
+2. Подключите репозиторий `room-setup` (не event-crm)
+3. **Root Directory** оставьте пустым — корень репозитория
 4. Deploy
 
 Можно привязать свой домен, например `zala.example.com`.
@@ -28,7 +30,6 @@ npm run dev
 ### Другой хостинг
 
 ```bash
-cd room-setup
 npm run build
 npm run start
 ```
@@ -43,14 +44,14 @@ npm run start
 - Стулья вокруг столов
 - Импорт списка гостей и назначение мест
 - Экспорт рассадки в CSV
+- Отметка «Пришёл» и перечёркивание стула на карте
 - PWA: можно добавить на домашний экран телефона
 
 ## Структура
 
 ```
-room-setup/
-  src/app/           — страницы
-  src/components/    — редактор и UI
-  src/lib/             — логика и localStorage
-  public/              — PWA manifest и иконка
+src/app/           — страницы
+src/components/    — редактор и UI
+src/lib/           — логика и localStorage
+public/            — PWA manifest и иконка
 ```
