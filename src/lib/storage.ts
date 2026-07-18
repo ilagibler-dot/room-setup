@@ -125,3 +125,18 @@ export function createVenue(name: string): Venue {
 export function deleteVenue(id: string) {
   writeAll(readAll().filter((venue) => venue.id !== id));
 }
+
+export function importVenues(imported: Venue[]): { added: number; updated: number } {
+  const byId = new Map(readAll().map((venue) => [venue.id, venue]));
+  let added = 0;
+  let updated = 0;
+
+  for (const venue of imported.map(normalizeVenue)) {
+    if (byId.has(venue.id)) updated += 1;
+    else added += 1;
+    byId.set(venue.id, { ...venue, updated_at: new Date().toISOString() });
+  }
+
+  writeAll(Array.from(byId.values()));
+  return { added, updated };
+}
