@@ -1,0 +1,18 @@
+{
+  "name": "Зал — планировка помещений",
+  "short_name": "Зал",
+  "description": "Планировка залов, расстановка столов и рассадка гостей",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e6eaf2",
+  "theme_color": "#000000",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/icons/room-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
